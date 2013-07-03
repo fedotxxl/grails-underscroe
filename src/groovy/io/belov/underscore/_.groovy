@@ -1,4 +1,5 @@
 package io.belov.underscore
+
 class _ {
 
     static String encodeAsURL(String source) {

@@ -4,8 +4,9 @@
  */
 package io.belov.underscore
 
-import javax.servlet.http.HttpServletRequest
 import org.springframework.web.context.request.RequestContextHolder
+
+import javax.servlet.http.HttpServletRequest
 
 class _web {
 

@@ -4,6 +4,7 @@
  */
 package io.belov.underscore
 
+import grails.util.Holders
 import org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib
 
 class _grails {
@@ -22,7 +23,7 @@ class _grails {
     static getGrailsApplication() {
         //todo implement synchronized signleton
         if (!this.@grailsApplication) {
-            grailsApplication = new FakeDomainClass().domainClass.grailsApplication
+            grailsApplication = Holders.grailsApplication
         }
 
         return this.@grailsApplication
