@@ -3,14 +3,15 @@
  * Copyright (c) 2012 Cybervision. All rights reserved.
  */
 package io.belov.underscore
-
 import grails.util.Holders
 import org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib
+import org.springframework.context.MessageSource
 
 class _grails {
 
-    private static grailsApplication
-    private static g
+    private static grailsApplication = null
+    private static g  = null
+    private static messageSource = null
 
     public static getBean(String beanName) {
         return getGrailsApplication().mainContext.getBean(beanName);
@@ -29,6 +30,11 @@ class _grails {
         return this.@grailsApplication
     }
 
+    /**
+     * Do not use it outside request context. Generates "No thread-bound request found" exception
+     * @throws java.lang.IllegalStateException
+     * @return g tagLib
+     */
     static ApplicationTagLib getG() {
         //todo implement synchronized signleton
         if (!this.@g) {
@@ -36,6 +42,14 @@ class _grails {
         }
 
         return this.@g
+    }
+
+    static MessageSource getMessageSource() {
+        if (!this.@messageSource) {
+            messageSource = getBean('messageSource')
+        }
+
+        return this.@messageSource
     }
 
 }
