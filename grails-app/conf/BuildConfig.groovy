@@ -28,9 +28,14 @@ grails.project.dependency.resolution = {
 
     plugins {
         build(":tomcat:$grailsVersion",
-              ":release:2.0.3",
-              ":rest-client-builder:1.0.2") {
+              ":release:2.2.1",
+              ":rest-client-builder:1.0.3") {
             export = false
         }
     }
 }
+
+//configuring release plugin
+//myMavenRepo configured through ~/.grails/settings.groovy
+//to publish plugin use "grails publish-plugin"
+grails.project.repos.default = "myMavenRepo"
