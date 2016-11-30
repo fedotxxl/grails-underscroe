@@ -24,11 +24,11 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.18'
-        compile "commons-io:commons-io:2.4"
+        compile "commons-io:commons-io:2.1"
     }
 
     plugins {
-        build(":tomcat:7.0.55.3",
+        build(":tomcat:$grailsVersion",
               ":release:2.2.1",
               ":rest-client-builder:1.0.3") {
             export = false
